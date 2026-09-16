@@ -40,91 +40,12 @@
     </section>
 </main>
 
-<!-- NEWS DETAIL MODAL -->
-<div
-    id="news-modal"
-    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
->
-    <div
-        class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative"
-    >
-        <!-- Close Button -->
-        <button
-            id="close-modal-btn"
-            class="absolute top-4 right-4 z-10 w-9 h-9 bg-slate-900/40 hover:bg-slate-900/70 text-white rounded-full flex items-center justify-center transition-all"
-        >
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <!-- Modal Image -->
-        <div class="h-64 sm:h-72 relative">
-            <img id="modal-img" src="" alt="Деталі новини" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
-            <div class="absolute bottom-4 left-6 right-6 text-white">
-                <span
-                    id="modal-date"
-                    class="font-oswald text-xs sm:text-sm text-amber-300 font-medium flex items-center gap-2 mb-1"
-                >
-                    <i class="fa-regular fa-calendar-alt"></i> <span></span>
-                </span>
-                <h3 id="modal-title" class="font-oswald text-xl sm:text-2xl font-bold leading-snug drop-shadow-sm"></h3>
-            </div>
-        </div>
-
-        <!-- Modal Body Text -->
-        <div class="p-6 sm:p-8 space-y-4">
-            <p id="modal-text" class="text-slate-600 leading-relaxed text-sm sm:text-base whitespace-pre-line"></p>
-            <div class="pt-4 border-t border-slate-100 flex justify-end">
-                <button
-                    id="close-modal-bottom-btn"
-                    class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-all"
-                >
-                    Закрити
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
     function ensureLength(str: string, desiredLength = 188) {
         if (str.length > desiredLength) {
             return str.slice(0, desiredLength) + "...";
         } else {
             return str + "...";
-        }
-    }
-
-    // Modal Control Functions
-    function openNewsModal(title: string, date: string, text: string, imgSrc: string) {
-        const modal = document.getElementById('news-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDateSpan = document.getElementById('modal-date')?.querySelector('span');
-        const modalText = document.getElementById('modal-text');
-        const modalImg = document.getElementById('modal-img') as HTMLImageElement;
-
-        if (modal && modalTitle && modalDateSpan && modalText && modalImg) {
-            modalTitle.textContent = title;
-            modalDateSpan.textContent = date;
-            modalText.textContent = text;
-            modalImg.src = imgSrc;
-
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            const dialog = modal.querySelector('div');
-            dialog?.classList.remove('scale-95');
-            dialog?.classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeNewsModal() {
-        const modal = document.getElementById('news-modal');
-        if (modal) {
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            const dialog = modal.querySelector('div');
-            dialog?.classList.remove('scale-100');
-            dialog?.classList.add('scale-95');
-            document.body.style.overflow = 'auto';
         }
     }
 
@@ -176,9 +97,9 @@
 
             const postsData = await Promise.all(fetchPostPromises);
 
-            // Generate HTML using Tailwind CSS structure from 201 (1).html
+            // Generate HTML using Tailwind CSS structure
             blog_area.innerHTML = postsData.map(post => `
-                <article class="news-card bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group" id="${post.id}">
+                <article class="news-card bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group cursor-pointer" id="${post.id}">
                     <div>
                         <div class="relative overflow-hidden h-48 sm:h-52">
                             <img src="${post.image}"
@@ -200,27 +121,22 @@
                         </div>
                     </div>
                     <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
-                        <button class="open-modal-btn w-full btn-gradient-shadow text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2">
+                        <a href="https://gymnasium201-kyiv.github.io/post/?post_id=${post.id}" class="w-full btn-gradient-shadow text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2">
                             <span>Читати повністю</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </button>
+                        </a>
                     </div>
                 </article>
             `).join('');
 
-            // Attach listeners to "Читати повністю" buttons to open the modal viewer
+            // Navigate to individual post page on card click
             postsData.forEach(post => {
                 const card = document.getElementById(post.id);
-                const btn = card?.querySelector('.open-modal-btn');
-                btn?.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openNewsModal(post.title, post.date, post.fullText, post.image);
-                });
-
-                // Optional: navigate to individual post page on full card click
-                card?.addEventListener('click', () => {
-                    openNewsModal(post.title, post.date, post.fullText, post.image);
-                    // Alternatively, redirect: window.location.href = `/post/?post_id=${post.id}`;
+                card?.addEventListener('click', (e) => {
+                    // Перевірка, щоб лінк не тригерився двічі при кліку безпосередньо на кнопку <a>
+                    if (!(e.target as HTMLElement).closest('a')) {
+                        window.location.href = `https://gymnasium201-kyiv.github.io/post/?post_id=${post.id}`;
+                    }
                 });
             });
 
@@ -232,25 +148,6 @@
     // Initialize Event Listeners
     document.addEventListener('DOMContentLoaded', () => {
         loadBlogPosts();
-
-        const closeBtn = document.getElementById('close-modal-btn');
-        const closeBottomBtn = document.getElementById('close-modal-bottom-btn');
-        const modal = document.getElementById('news-modal');
-
-        closeBtn?.addEventListener('click', closeNewsModal);
-        closeBottomBtn?.addEventListener('click', closeNewsModal);
-
-        modal?.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeNewsModal();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeNewsModal();
-            }
-        });
     });
 </script>
 
