@@ -6,12 +6,32 @@
 <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <!-- LATEST NEWS SECTION -->
     <section id="latest-news">
-        <div class="page-title-container text-center mb-10">
-                <h2 class="page-title font-oswald text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 relative pb-4 inline-block tracking-wide">
-                    Останні новини
-                </h2>
-                <p class="text-slate-500 text-xs sm:text-sm md:text-base mt-2 px-2">Будьте в курсі всіх важливих подій та досягнень нашої гімназії</p>
+        <div class="text-center mb-12">
+            <!-- Верхній бейдж -->
+            <span
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100 shadow-sm mb-3"
+            >
+                <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                Освітнє життя
+            </span>
+
+            <!-- Основний заголовок -->
+            <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+                Останні новини
+            </h2>
+
+            <!-- Опис -->
+            <p class="text-slate-600 text-sm sm:text-base mt-3 max-w-xl mx-auto font-normal">
+                Будьте в курсі всіх важливих подій, досягнень та оголошень нашої гімназії
+            </p>
+
+            <!-- Декоративна лінія -->
+            <div class="mt-4 flex items-center justify-center gap-2">
+                <div class="h-1 w-12 bg-indigo-600 rounded-full"></div>
+                <div class="h-1 w-2 bg-indigo-400 rounded-full"></div>
+                <div class="h-1 w-1 bg-indigo-200 rounded-full"></div>
             </div>
+        </div>
 
         <!-- Dynamic News Grid Container -->
         <div class="news-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" id="blog_area">
@@ -21,20 +41,30 @@
 </main>
 
 <!-- NEWS DETAIL MODAL -->
-<div id="news-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative">
-        
+<div
+    id="news-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+>
+    <div
+        class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative"
+    >
         <!-- Close Button -->
-        <button id="close-modal-btn" class="absolute top-4 right-4 z-10 w-9 h-9 bg-slate-900/40 hover:bg-slate-900/70 text-white rounded-full flex items-center justify-center transition-all">
+        <button
+            id="close-modal-btn"
+            class="absolute top-4 right-4 z-10 w-9 h-9 bg-slate-900/40 hover:bg-slate-900/70 text-white rounded-full flex items-center justify-center transition-all"
+        >
             <i class="fa-solid fa-xmark"></i>
         </button>
 
         <!-- Modal Image -->
         <div class="h-64 sm:h-72 relative">
-            <img id="modal-img" src="" alt="Деталі новини" class="w-full h-full object-cover">
+            <img id="modal-img" src="" alt="Деталі новини" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-6 right-6 text-white">
-                <span id="modal-date" class="font-oswald text-xs sm:text-sm text-amber-300 font-medium flex items-center gap-2 mb-1">
+                <span
+                    id="modal-date"
+                    class="font-oswald text-xs sm:text-sm text-amber-300 font-medium flex items-center gap-2 mb-1"
+                >
                     <i class="fa-regular fa-calendar-alt"></i> <span></span>
                 </span>
                 <h3 id="modal-title" class="font-oswald text-xl sm:text-2xl font-bold leading-snug drop-shadow-sm"></h3>
@@ -45,7 +75,10 @@
         <div class="p-6 sm:p-8 space-y-4">
             <p id="modal-text" class="text-slate-600 leading-relaxed text-sm sm:text-base whitespace-pre-line"></p>
             <div class="pt-4 border-t border-slate-100 flex justify-end">
-                <button id="close-modal-bottom-btn" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-all">
+                <button
+                    id="close-modal-bottom-btn"
+                    class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-all"
+                >
                     Закрити
                 </button>
             </div>
@@ -99,7 +132,7 @@
     async function loadBlogPosts() {
         const urlParams = new URLSearchParams(window.location.search);
         let page_id = urlParams.get("page");
-        
+
         if (!page_id) {
             page_id = "1";
         }
@@ -148,8 +181,8 @@
                 <article class="news-card bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group" id="${post.id}">
                     <div>
                         <div class="relative overflow-hidden h-48 sm:h-52">
-                            <img src="${post.image}" 
-                                 alt="${post.title}" 
+                            <img src="${post.image}"
+                                 alt="${post.title}"
                                  class="news-image w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                  onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80'">
                             <span class="absolute top-3 right-3 bg-[#4b6496] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
@@ -186,7 +219,7 @@
                     e.stopPropagation();
                     openNewsModal(post.title, post.date, post.fullText, post.image);
                 });
-                
+
                 // Optional: navigate to individual post page on full card click
                 card?.addEventListener('click', () => {
                     openNewsModal(post.title, post.date, post.fullText, post.image);
@@ -234,17 +267,5 @@
     .btn-gradient-shadow:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(75, 100, 150, 0.45);
-    }
-    
-    .page-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: #4b6496;
-        border-radius: 9999px;
     }
 </style>
