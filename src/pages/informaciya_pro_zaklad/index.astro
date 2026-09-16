@@ -12,8 +12,756 @@ import CategoriesMenu from '../../components/InformationAboutInstitution/Categor
 
 <Layout>
 	<Header />
-	<Hero />
-	<CategoriesMenu />
-    <InformationAboutInstitution />
-	<Footer />
+	<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гімназія №201 Дніпровського району м. Києва</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Oswald & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#4b6496', // Primary tone from school branding
+                            600: '#394e77',
+                            700: '#2c3e50',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .pop-item {
+            position: absolute;
+            opacity: 0;
+            animation: popAndFloat 8s linear infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes popAndFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.6) rotate(0deg);
+            }
+            15% {
+                opacity: 0.35;
+                transform: translateY(-15px) scale(1.1) rotate(10deg);
+            }
+            50% {
+                opacity: 0.25;
+                transform: translateY(-50px) scale(1) rotate(-10deg);
+            }
+            85% {
+                opacity: 0.15;
+                transform: translateY(-100px) scale(0.9) rotate(15deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-140px) scale(0.7) rotate(30deg);
+            }
+        }
+
+        .item-1 { left: 8%; bottom: -10px; animation-duration: 7s; animation-delay: 0s; }
+        .item-2 { left: 28%; bottom: -10px; animation-duration: 9s; animation-delay: 2.2s; }
+        .item-3 { left: 58%; bottom: -10px; animation-duration: 6.5s; animation-delay: 4.1s; }
+        .item-4 { left: 78%; bottom: -10px; animation-duration: 8.5s; animation-delay: 1.2s; }
+        .item-5 { left: 92%; bottom: -10px; animation-duration: 10s; animation-delay: 5s; }
+
+        .page-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #4b6496;
+            border-radius: 9999px;
+        }
+
+        .btn-gradient-shadow {
+            background-image: linear-gradient(135deg, #4b6496 0%, #2c3e50 100%);
+            box-shadow: 0 4px 14px rgba(75, 100, 150, 0.35);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-gradient-shadow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(75, 100, 150, 0.45);
+        }
+    </style>
+</head>
+<body class="font-inter bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <header class="relative bg-gradient-to-br from-[#394e77] via-[#4b6496] to-[#2c3e50] text-white overflow-hidden shadow-lg border-b border-indigo-900/20">
+        
+        <!-- Animated Background Icons -->
+        <div class="animated-background absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div class="pop-item item-1 text-4xl text-white/30"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="pop-item item-2 text-3xl text-white/30"><i class="fa-solid fa-book-open"></i></div>
+            <div class="pop-item item-3 text-4xl text-white/30"><i class="fa-solid fa-atom"></i></div>
+            <div class="pop-item item-4 text-3xl text-white/30"><i class="fa-solid fa-award"></i></div>
+            <div class="pop-item item-5 text-4xl text-white/30"><i class="fa-solid fa-pen-nib"></i></div>
+        </div>
+
+        <!-- TOP NAVIGATION BAR -->
+        <nav class="relative z-20 bg-slate-900/40 backdrop-blur-md border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-auto min-h-[3.5rem] py-2 text-sm font-medium">
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden xl:flex items-center space-x-3 2xl:space-x-5 py-1">
+                    <a href="#important-news" class="text-white hover:text-amber-300 transition-colors px-2 py-1 rounded-md text-xs 2xl:text-sm font-semibold whitespace-nowrap">Новини</a>
+                    <a href="#about-section" class="text-slate-200 hover:text-amber-300 transition-colors px-2 py-1 rounded-md text-xs 2xl:text-sm whitespace-nowrap">Інформація про заклад</a>
+                    <a href="#history-section" class="text-slate-200 hover:text-amber-300 transition-colors px-2 py-1 rounded-md text-xs 2xl:text-sm whitespace-nowrap">Історія гімназії</a>
+                    <a href="#transparency-section" class="text-slate-200 hover:text-amber-300 transition-colors px-2 py-1 rounded-md text-xs 2xl:text-sm whitespace-nowrap">Прозорість та інформаційна відкритість закладу</a>
+                    <a href="#european-space-section" class="text-slate-200 hover:text-amber-300 transition-colors px-2 py-1 rounded-md text-xs 2xl:text-sm whitespace-nowrap">Заклад - частина європейського освітнього простору</a>
+                    <a href="#education-process-section" class="text-slate-200 hover:text-amber-300 transition-colors px-2 py-1 rounded-md text-xs 2xl:text-sm whitespace-nowrap">Освітній процес</a>
+                </div>
+
+                <!-- Mobile Menu Header Button -->
+                <div class="flex xl:hidden items-center justify-between w-full">
+                    <span class="text-xs uppercase tracking-wider text-slate-300 font-oswald flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-amber-400"></i> Гімназія №201
+                    </span>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Відкрити меню" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white focus:outline-none transition-colors flex items-center gap-2 text-sm font-semibold">
+                        <span>Меню</span>
+                        <i id="hamburger-icon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Social & Media Icons -->
+                <div class="social-icons hidden xl:flex items-center gap-2 ml-4 flex-shrink-0">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/30 flex items-center justify-center transition-all text-xs">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://t.me" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/30 flex items-center justify-center transition-all text-xs">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                    <a href="mailto:sch201@ukr.net" title="Електронна пошта" aria-label="Email" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/30 flex items-center justify-center transition-all text-xs">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden xl:hidden bg-slate-900/95 border-t border-white/10 px-4 py-3 space-y-2 backdrop-blur-lg">
+                <a href="#important-news" onclick="toggleMobileMenu()" class="block text-slate-100 hover:bg-white/10 hover:text-amber-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors">Новини</a>
+                <a href="#about-section" onclick="toggleMobileMenu()" class="block text-slate-100 hover:bg-white/10 hover:text-amber-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors">Інформація про заклад</a>
+                <a href="#history-section" onclick="toggleMobileMenu()" class="block text-slate-100 hover:bg-white/10 hover:text-amber-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors">Історія гімназії</a>
+                <a href="#transparency-section" onclick="toggleMobileMenu()" class="block text-slate-100 hover:bg-white/10 hover:text-amber-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors">Прозорість та інформаційна відкритість закладу</a>
+                <a href="#european-space-section" onclick="toggleMobileMenu()" class="block text-slate-100 hover:bg-white/10 hover:text-amber-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors">Заклад - частина європейського освітнього простору</a>
+                <a href="#education-process-section" onclick="toggleMobileMenu()" class="block text-slate-100 hover:bg-white/10 hover:text-amber-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors">Освітній процес</a>
+                
+                <div class="pt-3 mt-2 border-t border-white/10 flex items-center justify-around">
+                    <a href="https://facebook.com" target="_blank" class="text-slate-300 hover:text-white text-lg"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://t.me" target="_blank" class="text-slate-300 hover:text-white text-lg"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="mailto:sch201@ukr.net" class="text-slate-300 hover:text-white text-lg"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Hero Header Content -->
+        <div id="hero" class="hero-content relative z-10 max-w-7xl mx-auto px-6 py-10 md:py-14 flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+            <!-- School Emblem -->
+            <div class="relative group flex-shrink-0">
+                <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-indigo-400 rounded-full blur opacity-40 group-hover:opacity-80 transition duration-500"></div>
+                <div class="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full border-4 border-white/90 shadow-2xl relative bg-white flex items-center justify-center p-3">
+                    <!-- High Quality School Emblem SVG Vector -->
+                    <svg viewBox="0 0 200 200" class="w-full h-full">
+                        <circle cx="100" cy="100" r="95" fill="none" stroke="#4b6496" stroke-width="4"/>
+                        <circle cx="100" cy="100" r="88" fill="none" stroke="#d9e2ec" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <path d="M 40 120 C 40 150, 160 150, 160 120 C 160 80, 40 80, 40 120" fill="none" stroke="#2c3e50" stroke-width="2.5"/>
+                        <!-- Ears of Wheat -->
+                        <path d="M 35 130 Q 25 100 45 60" fill="none" stroke="#eab308" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M 165 130 Q 175 100 155 60" fill="none" stroke="#eab308" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Book -->
+                        <path d="M 60 125 Q 100 115 100 135 Q 100 115 140 125 L 140 145 Q 100 135 100 155 Q 100 135 60 145 Z" fill="#4b6496" opacity="0.9"/>
+                        <!-- Sprout -->
+                        <path d="M 100 120 Q 90 90 70 85 Q 95 90 100 120 Q 105 90 130 85 Q 110 90 100 120 Z" fill="#22c55e"/>
+                        <text x="100" y="62" font-family="'Oswald', sans-serif" font-size="34" font-weight="bold" fill="#394e77" text-anchor="middle">201</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="space-y-2 max-w-3xl">
+                <h1 class="font-oswald text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-md leading-tight">
+                    Гімназія №201 Дніпровського району м. Києва
+                </h1>
+                <p class="text-slate-200 font-light text-base sm:text-lg max-w-xl mx-auto md:mx-0">
+                    Освітній простір творчості, знань та інновацій для майбутнього України
+                </p>
+            </div>
+        </div>
+
+        <div class="relative z-20 bg-slate-900/60 backdrop-blur-md border-t border-white/10 py-3 px-4">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
+                <button onclick="openSubModal('Адміністрація Гімназії №201', 'Інформація про керівництво закладу та години прийому громадян.', 'Адміністрація закладу забезпечує якісне функціонування освітнього процесу, реалізацію освітньої програми та безпеку всіх учасників навчння.<br><br><b>Контактний телефон:</b> +38 (063) 319-79-82<br><b>Електронна пошта:</b> sch201@ukr.net')" class="bg-brand-500/80 hover:bg-brand-500 text-white font-medium px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow flex items-center gap-2">
+                    <i class="fa-solid fa-user-tie text-amber-300"></i> Адміністрація
+                </button>
+                <button onclick="openSubModal('Педагогічний колектив', 'Професійні вчителі та наставники Гімназії №201.', 'Педагогічний колектив гімназії складається з висококваліфікованих фахівців, вчителів вищої категорії, старших вчителів та вчителів-методистів, які впроваджують сучасні методики дитиноцентризму та принципів НУШ.')" class="bg-brand-500/80 hover:bg-brand-500 text-white font-medium px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow flex items-center gap-2">
+                    <i class="fa-solid fa-chalkboard-user text-amber-300"></i> Педагогічний колектив
+                </button>
+                <button onclick="openSubModal('Інноваційна й експериментальна діяльність', 'Статус всеукраїнського експериментального закладу.', 'Школа є експериментальним навчальним закладом всеукраїнського рівня з проблеми:<br><blockquote class=\"p-3 bg-slate-100 border-l-4 border-brand-500 rounded my-2 text-slate-800 italic font-medium\">«Організаційно-педагогічні умови функціонування та розвитку безпечної школи у постпандемічний час»</blockquote>')" class="bg-brand-500/80 hover:bg-brand-500 text-white font-medium px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow flex items-center gap-2">
+                    <i class="fa-solid fa-flask text-amber-300"></i> Інноваційна діяльність
+                </button>
+                <a href="#contacts" class="bg-brand-500/80 hover:bg-brand-500 text-white font-medium px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-amber-300"></i> Контакти
+                </a>
+                <button onclick="openSubModal('Організація харчування в закладі', 'Інформація про харчування та дотримання санітарних норм.', 'У закладі забезпечується якісне, збалансоване та безпечне харчування здобувачів освіти відповідно до затверджених норм та санітарних стандартів України.')" class="bg-brand-500/80 hover:bg-brand-500 text-white font-medium px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow flex items-center gap-2">
+                    <i class="fa-solid fa-utensils text-amber-300"></i> Організація харчування
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+        <!-- MAIN SCHOOL TITLE & BUILDING PHOTO SECTION -->
+        <section id="about-section" class="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-lg border border-slate-200/80 transition-all">
+            <div class="text-center mb-8">
+                <h2 class="page-title font-oswald text-2xl sm:text-4xl font-bold text-slate-900 relative pb-4 inline-block tracking-tight">
+                    Гімназія №201 Дніпровського району м. Києва
+                </h2>
+            </div>
+
+            <!-- School Photo Frame -->
+            <div class="relative rounded-2xl overflow-hidden shadow-xl mb-8 max-w-4xl mx-auto group">
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80" 
+                     alt="Будівля Гімназії №201" 
+                     class="w-full h-64 sm:h-80 md:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-6">
+                    <p class="text-white font-medium text-sm sm:text-base flex items-center gap-2 drop-shadow">
+                        <i class="fa-solid fa-building text-amber-400"></i>
+                        Головний корпус гімназії • Дніпровський район, проспект Воскресенський, 14А
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8">
+                
+                <!-- About Block -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4 text-brand-600">
+                            <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-school"></i>
+                            </div>
+                            <h3 class="font-oswald text-xl font-bold text-slate-900">Про заклад</h3>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-3">
+                            Заклад заснований у <span class="font-bold text-slate-900">1971 році</span>, мова навчання – <span class="font-bold text-slate-900">українська</span>.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                            У <span class="font-bold text-slate-900">2026-2027 році</span> в <span class="font-bold text-slate-900">26 класах</span> школи навчаються <span class="font-bold text-slate-900">712 учнів</span>. Школа працює за п'ятиденним робочим тижнем.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Schedule Block -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4 text-brand-600">
+                            <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h3 class="font-oswald text-xl font-bold text-slate-900">Розклад</h3>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-3">
+                            Навчальні заняття розпочинаються <span class="font-bold text-slate-900">о 08.30</span>.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                            Освітній процес у закладі здійснюється на засадах <span class="font-bold text-slate-900">дитиноцентризму</span> відповідно до принципів <span class="font-bold text-slate-900">НУШ</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="education-process-section" class="bg-gradient-to-br from-brand-50 via-white to-slate-50 rounded-2xl p-6 sm:p-8 border border-brand-100 shadow-sm mb-8">
+                <div class="flex items-center gap-3 mb-4 text-brand-600">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center text-xl shadow-md">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-bold text-slate-900">Освітні програми</h3>
+                </div>
+
+                <p class="text-slate-800 text-base font-semibold mb-3">
+                    1-9 класи <span class="font-normal text-slate-700">працюють за програмою <span class="font-semibold text-slate-900">НУШ</span>.</span>
+                </p>
+
+                <ul class="space-y-2 text-slate-700 text-sm sm:text-base mb-6 pl-2">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-dot text-brand-500 text-xs mt-1.5"></i>
+                        <span>Річний навчальний план на 2026-2027 навчальний рік</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-dot text-brand-500 text-xs mt-1.5"></i>
+                        <span>освітня програма на 2026-2027 навчальний рік для 1-4 класів</span>
+                    </li>
+                </ul>
+
+                <!-- Experimental Status Box -->
+                <div class="bg-white rounded-xl p-5 border border-brand-200 shadow-sm">
+                    <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-wide">
+                        Експериментальний статус
+                    </span>
+                    <p class="text-slate-800 font-semibold text-sm sm:text-base mb-2">
+                        Школа – експериментальний навчальний заклад всеукраїнського рівня з проблеми:
+                    </p>
+                    <blockquote class="italic text-brand-700 font-medium pl-4 border-l-4 border-amber-400 py-1 text-sm sm:text-base bg-amber-50/50 rounded-r-lg">
+                        «Організаційно-педагогічні умови функціонування та розвитку безпечної школи у постпандемічний час»
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Medical Institution Collaboration Highlight -->
+            <div id="history-section" class="bg-amber-50/60 rounded-2xl p-5 border border-amber-200/80 flex items-start gap-4 mb-8">
+                <div class="text-amber-600 text-2xl pt-1 flex-shrink-0">
+                    <i class="fa-solid fa-hospital-user"></i>
+                </div>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                    Протягом майже <span class="font-bold text-slate-900">50 років</span> організовано освітній процес для дітей, що знаходяться на лікуванні у <span class="font-bold text-slate-900">КНП «Київська дитяча клінічна лікарня №2»</span>.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Out of class work -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <h3 class="font-oswald text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-shapes text-brand-500"></i> Позаурочна робота
+                    </h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                        Розвитку особистості кожної дитини сприяє й розгалужена система позаурочної роботи: в школі працюють <span class="font-bold text-slate-900">20 гуртків, студій, клубів, спортивних секцій</span>.
+                    </p>
+                </div>
+
+                <!-- Motto Quote -->
+                <div class="bg-slate-100 rounded-2xl p-6 border-l-4 border-brand-500 shadow-sm text-center">
+                    <h4 class="font-oswald text-xs uppercase tracking-widest text-slate-500 mb-1">Наше гасло</h4>
+                    <p class="font-oswald text-2xl sm:text-3xl font-bold text-brand-700 italic">
+                        «Навчати, виховувати й піклуватися.»
+                    </p>
+                </div>
+
+                <!-- Mission Box -->
+                <div id="european-space-section" class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-compass text-brand-500"></i> Місія закладу
+                    </h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                        Формування всебічно розвиненої, освіченої, стратегічно мислячої, конкурентоздатної, гуманістично спрямованої особистості з почуттям національної свідомості, з громадянською позицією, системою наукових знань; готової до суспільного самовизначення, орієнтованої на стале майбутнє та відповідні життєві цінності і пріоритети; особистості з творчим, перспективним мисленням, здатної знаходити нетрадиційні рішення в життєвих ситуаціях, що забезпечить її самовизначення та успіх у житті.
+                    </p>
+                </div>
+
+                <!-- Vision Box -->
+                <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-eye text-brand-500"></i> Візія закладу
+                    </h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                        Створення сприятливого середовища та умов для забезпечення освіти для сталого (забалансованого) розвитку здобувачів освіти, що є новим етапом формування компонентів комплексної системи освіти, коли її складові стають рівнозначними.
+                    </p>
+                </div>
+
+                <!-- Creating Situation of Success -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <h3 class="font-oswald text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-amber-500"></i> Створення ситуації успіху
+                    </h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                        Головне завдання та зміст діяльності кожного вчителя в нашому педагогічному колективі – створити для всіх вихованців <span class="font-bold text-slate-900">ситуацію успіху</span> – можливість пережити радість досягнення, усвідомити свої можливості, повірити в себе.
+                    </p>
+                </div>
+
+                <!-- Results Section -->
+                <div id="transparency-section" class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-award text-brand-500"></i> Результати
+                    </h3>
+                    <ul class="space-y-3 text-slate-700 text-sm sm:text-base">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xs mt-0.5 font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Перемоги в ІІІ етапі Всеукраїнської олімпіади з базових дисциплін.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xs mt-0.5 font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Перемоги в ІІІ етапах Всеукраїнського конкурсу-захисту науково-дослідницьких робіт МАН «Дослідник».</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xs mt-0.5 font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Перемоги в Міжнародному конкурсі науково-технічної творчості молоді «INTEL ISEF» та інших інтелектуальних і творчих конкурсах.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Free Education Notice Card -->
+                <div class="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-700 text-white rounded-2xl p-6 text-center shadow-lg transform transition hover:scale-[1.01]">
+                    <p class="font-oswald text-lg sm:text-xl md:text-2xl font-bold tracking-wide uppercase">
+                        В закладі ПЛАТА ЗА НАВЧАННЯ ВІДСУТНЯ.
+                    </p>
+                    <p class="font-oswald text-base sm:text-lg md:text-xl font-medium text-amber-300 mt-1 uppercase">
+                        Заклад освіти НЕ НАДАЄ ПЛАТНІ ДОДАТКОВІ ПОСЛУГИ.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="important-news">
+            <div class="page-title-container text-center mb-8">
+                <h2 class="page-title font-oswald text-3xl sm:text-4xl font-bold text-slate-800 relative pb-4 inline-block tracking-wide">
+                    <i class="fa-solid fa-newspaper text-brand-500 mr-2"></i>Новини та події гімназії
+                </h2>
+                <p class="text-slate-500 text-sm sm:text-base mt-2">Термінові оголошення та актуальне життя закладу</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- News Item 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Безпека" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                                Безпека
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-slate-500 font-oswald text-xs mb-2 flex items-center gap-1">
+                                <i class="fa-regular fa-clock text-brand-500"></i> 15 Березня 2026
+                            </div>
+                            <h3 class="font-oswald text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-brand-500 transition-colors">
+                                Правила безпеки та алгоритм дій під час повітряної тривоги
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm line-clamp-3">
+                                Шановні батьки та учні! Нагадуємо про безумовне дотримання безпекового протоколу під час освітнього процесу. Усі учасники одразу прямують до укриття гімназії.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <button onclick="openNewsModal('Правила безпеки та алгоритм дій під час повітряної тривоги', '15 Березня 2026', 'Під час сигналу повітряної тривоги всі уроки призупиняються. Учні у супроводі вчителів організовано переходять до укриття, яке оснащене всім необхідним для тривалого перебування (вода, аптечки, Wi-Fi, місця для відпочинку). Навчальний процес відновлюється після відбою.', 'https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80')" 
+                                class="w-full btn-gradient-shadow text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2">
+                            <span>Детальніше</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Прийом документів" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-brand-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                                Оголошення
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-slate-500 font-oswald text-xs mb-2 flex items-center gap-1">
+                                <i class="fa-regular fa-clock text-brand-500"></i> 12 Березня 2026
+                            </div>
+                            <h3 class="font-oswald text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-brand-500 transition-colors">
+                                Прийом документів до перших класів на 2026-2027 н.р.
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm line-clamp-3">
+                                Оголошуємо про початок прийому документів для зарахування дітей до 1-го класу Гімназії №201. Заяви приймаються як особисто, так і в електронній формі.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <button onclick="openNewsModal('Прийом документів до перших класів на 2026-2027 н.р.', '12 Березня 2026', 'Перелік необхідних документів: 1) Заява батьків; 2) Копія свідоцтва про народження дитини; 3) Медична довідка № 086-1/о; 4) Документ, що підтверджує місце проживання. Подача заяв триває до 31 травня.', 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80')" 
+                                class="w-full btn-gradient-shadow text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2">
+                            <span>Детальніше</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Тиждень науки" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                                Події
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-slate-500 font-oswald text-xs mb-2 flex items-center gap-1">
+                                <i class="fa-regular fa-clock text-brand-500"></i> 10 Березня 2026
+                            </div>
+                            <h3 class="font-oswald text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-brand-500 transition-colors">
+                                Всеукраїнський тиждень науки та інновацій у гімназії
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm line-clamp-3">
+                                Учні нашої гімназії презентували власні наукові проекти та дослідження під час щорічного тижня науки.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <button onclick="openNewsModal('Всеукраїнський тиждень науки та інновацій у гімназії', '10 Березня 2026', 'Цього тижня у Гімназії №201 відбувся традиційний Всеукраїнський тиждень науки. Учні підготували понад 30 інтерактивних презентацій, проводили експерименти та демонстрували проекти.', 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80')" 
+                                class="w-full btn-gradient-shadow text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2">
+                            <span>Детальніше</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="news-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative">
+            
+            <button onclick="closeNewsModal()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-slate-900/40 hover:bg-slate-900/70 text-white rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="h-56 sm:h-64 relative">
+                <img id="modal-img" src="" alt="Деталі" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-6 right-6 text-white">
+                    <span id="modal-date" class="font-oswald text-xs sm:text-sm text-amber-300 font-medium flex items-center gap-2 mb-1">
+                        <i class="fa-regular fa-calendar-alt"></i> <span></span>
+                    </span>
+                    <h3 id="modal-title" class="font-oswald text-xl sm:text-2xl font-bold leading-snug drop-shadow-sm"></h3>
+                </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+                <p id="modal-text" class="text-slate-600 leading-relaxed text-sm sm:text-base whitespace-pre-line"></p>
+                <div class="pt-4 border-t border-slate-100 flex justify-end">
+                    <button onclick="closeNewsModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-all">
+                        Закрити
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secondary Info Modal -->
+    <div id="sub-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative p-6 sm:p-8 space-y-4">
+            <button onclick="closeSubModal()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="sub-modal-title" class="font-oswald text-2xl font-bold text-slate-900 pr-8"></h3>
+            <p id="sub-modal-subtitle" class="text-xs sm:text-sm text-amber-700 font-semibold bg-amber-50 p-3 rounded-lg border border-amber-200"></p>
+            <div id="sub-modal-content" class="text-slate-700 text-sm sm:text-base leading-relaxed pt-2"></div>
+            <div class="pt-4 border-t border-slate-100 flex justify-end">
+                <button onclick="closeSubModal()" class="px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-xl transition-all shadow-md">
+                    Зрозуміло
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contacts" class="bg-gradient-to-br from-slate-900 via-brand-800 to-slate-900 text-slate-300 mt-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                
+                <!-- Contact Information -->
+                <div class="space-y-4">
+                    <h4 class="font-oswald text-xl font-bold text-white border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-address-book text-amber-400 mr-2"></i> Контактна інформація
+                    </h4>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-amber-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-slate-200">Адреса:</span>
+                                <p class="text-slate-400">Дніпровський район, проспект Воскресенський, 14А, м. Київ, 02130</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-amber-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-slate-200">Номер Телефону:</span>
+                                <p class="text-slate-400"><a href="tel:+380633197982" class="hover:text-amber-300 transition-colors">+38 (063) 319-79-82</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-amber-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-slate-200">Електронна Пошта:</span>
+                                <p class="text-slate-400"><a href="mailto:sch201@ukr.net" class="hover:text-amber-300 transition-colors">sch201@ukr.net</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Embed Frame -->
+                <div class="space-y-4">
+                    <h4 class="font-oswald text-xl font-bold text-white border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-map-location-dot text-amber-400 mr-2"></i> Розташування на Карті
+                    </h4>
+                    <div class="rounded-xl overflow-hidden border border-slate-700 h-44 shadow-md relative bg-slate-800">
+                        <iframe 
+                            title="Карта Гімназії №201"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.123456789!2d30.598!3d50.482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d1624f2b1d35%3A0x6a2c004a60f6ef!2sVoskmresenskyi%20Ave%2C%2014A%2C%20Kyiv!5e0!3m2!1suk!2sua!4v1600000000000!5m2!1suk!2sua" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Links -->
+                <div class="space-y-4">
+                    <h4 class="font-oswald text-xl font-bold text-white border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-link text-amber-400 mr-2"></i> Швидкі посилання
+                    </h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#important-news" class="hover:text-amber-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Новини гімназії</a></li>
+                        <li><a href="#about-section" class="hover:text-amber-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Інформація про заклад</a></li>
+                        <li><a href="#education-process-section" class="hover:text-amber-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Освітні програми</a></li>
+                        <li><a href="#transparency-section" class="hover:text-amber-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Прозорість закладу</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Author & Admin Credits Section -->
+            <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 text-center sm:text-left">
+                <div>
+                    <span>Адміністратор сайту: вчитель гімназії <b>Гуска С.С.</b></span>
+                    <span class="hidden sm:inline mx-2">|</span>
+                    <br class="sm:hidden" />
+                    <span>Творець сайту: випускник гімназії <b>Сєнніков Д.Д.</b></span>
+                </div>
+                <div>
+                    <p>© 2026 Гімназія №201 м. Києва. Всі права захищені.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('hamburger-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // News Reader Modal Trigger
+        function openNewsModal(title, date, text, imgSrc) {
+            const modal = document.getElementById('news-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDate = document.getElementById('modal-date').querySelector('span');
+            const modalText = document.getElementById('modal-text');
+            const modalImg = document.getElementById('modal-img');
+
+            modalTitle.textContent = title;
+            modalDate.textContent = date;
+            modalText.textContent = text;
+            modalImg.src = imgSrc;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-95');
+            modal.querySelector('div').classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNewsModal() {
+            const modal = document.getElementById('news-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Secondary Info Sub Modal Trigger
+        function openSubModal(title, subtitle, contentHtml) {
+            const modal = document.getElementById('sub-modal');
+            document.getElementById('sub-modal-title').textContent = title;
+            document.getElementById('sub-modal-subtitle').textContent = subtitle;
+            document.getElementById('sub-modal-content').innerHTML = contentHtml;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-95');
+            modal.querySelector('div').classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSubModal() {
+            const modal = document.getElementById('sub-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Backdrop Click
+        document.getElementById('news-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeNewsModal();
+        });
+        document.getElementById('sub-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeSubModal();
+        });
+
+        // Close on ESC Key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeNewsModal();
+                closeSubModal();
+            }
+        });
+    </script>
+</body>
+</html>
 </Layout>
