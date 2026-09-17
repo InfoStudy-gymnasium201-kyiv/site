@@ -8,145 +8,135 @@ import CategoriesMenu from '../../components/InformationAboutInstitution/Categor
 <Layout>
     <header />
     <CategoriesMenu />
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 font-inter">
-    
-    <!-- Заголовок сторінки у стилі нового дизайну -->
+    <section class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 font-inter">
+    <!-- Заголовок сторінки -->
     <div class="text-center mb-12">
-        <h1 class="page-title font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 relative pb-4 inline-block tracking-wide">
-            <i class="fa-solid fa-user-tie text-brand-500 mr-3"></i>Адміністрація гімназії №201
+        <h1 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 relative pb-4 inline-block tracking-wide page-title">
+            Адміністрація гімназії №201
         </h1>
-        <p class="text-slate-500 text-sm sm:text-base mt-2 max-w-xl mx-auto">
-            Керівний склад закладу освіти, що забезпечує якісний освітній процес та гармонійний розвиток гімназії
+        <p class="text-slate-500 text-sm sm:text-base mt-2">
+            Керівний склад нашого освітнього закладу
         </p>
     </div>
 
-    <!-- КЕРТВНИК / ДИРЕКТОР (Акцентна картка) -->
-    <div class="mb-12">
-        <div class="bg-gradient-to-br from-indigo-900/5 via-brand-50/50 to-white rounded-3xl p-6 sm:p-8 border border-brand-500/20 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
-            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
-            
-            <div class="flex flex-col lg:flex-row items-center gap-8 z-10 relative">
-                <!-- Фото Директора -->
-                <div class="relative group/img flex-shrink-0">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-brand-500 rounded-2xl blur opacity-30 group-hover/img:opacity-75 transition duration-500"></div>
-                    <img 
-                        src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(1).JPG?raw=true" 
-                        alt="Гмиря Ганна Володимирівна" 
-                        class="relative w-64 h-80 sm:w-72 sm:h-96 object-cover rounded-2xl shadow-md border-2 border-white"
-                    />
-                </div>
+    <!-- КАРТКА ДИРЕКТОРА (Акцентна/Головна) -->
+    <div class="mb-12 bg-gradient-to-br from-brand-50 via-white to-slate-50 border-l-4 border-brand-500 rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200 transition duration-300 hover:shadow-xl">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-8">
+            <!-- Фото директора -->
+            <div class="flex-shrink-0 relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-brand-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <img 
+                    src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(1).JPG?raw=true" 
+                    alt="Гмиря Ганна Володимирівна — Директор" 
+                    class="relative w-48 h-60 sm:w-56 sm:h-72 object-cover rounded-2xl shadow-lg border-2 border-white"
+                />
+            </div>
 
-                <!-- Інформація про Директора -->
-                <div class="flex-1 text-center lg:text-left space-y-4">
-                    <span class="inline-block bg-brand-500 text-white font-oswald text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-                        Директор гімназії
-                    </span>
-                    <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-                        Гмиря Ганна Володимирівна
-                    </h2>
-                    <div class="w-20 h-1 bg-amber-400 rounded-full mx-auto lg:mx-0"></div>
-                    <p class="text-slate-700 font-medium text-base sm:text-lg leading-relaxed max-w-2xl">
-                        Учитель зарубіжної літератури, спеціаліст вищої категорії, учитель-методист, <span class="text-brand-600 font-semibold">«Відмінник освіти України»</span>
+            <!-- Інформація про директора -->
+            <div class="flex-grow text-center md:text-left space-y-3">
+                <span class="inline-block bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Директор гімназії
+                </span>
+                <h2 class="font-oswald text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-700 leading-tight">
+                    Гмиря Ганна Володимирівна
+                </h2>
+                <div class="pt-2">
+                    <p class="text-slate-700 font-medium text-sm sm:text-base lg:text-lg leading-relaxed">
+                        Учитель зарубіжної літератури, спеціаліст вищої категорії, учитель-методист, <span class="text-amber-600 font-semibold">«Відмінник освіти України»</span>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ЗАСТУПНИКИ ДИРЕКТОРА (Сітка карток) -->
-    <div class="mb-6">
-        <h2 class="font-oswald text-2xl sm:text-3xl font-bold text-slate-800 mb-8 text-center border-b border-slate-200 pb-3">
-            Заступники директора
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <!-- Заступник 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 p-6 flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-                <div class="relative mb-5 w-48 h-60 overflow-hidden rounded-xl shadow-inner bg-slate-100">
-                    <img 
-                        src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(2).JPG?raw=true" 
-                        alt="Мефодьєва Світлана Олександрівна" 
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                </div>
-                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                    Заступник директора з НВР
-                </span>
-                <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
-                    Мефодьєва Світлана Олександрівна
-                </h3>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Учитель української мови і літератури, спеціаліст вищої категорії, вчитель-методист, «Відмінник освіти України»
-                </p>
+    <!-- СІТКА ЗАСТУПНИКІВ (2 в ряд на середніх і великих екранах) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- Заступник 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+            <div class="relative mb-4 overflow-hidden rounded-2xl shadow-md w-44 h-56 sm:w-48 sm:h-60">
+                <img 
+                    src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(2).JPG?raw=true" 
+                    alt="Мефодьєва Світлана Олександрівна" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
             </div>
-
-            <!-- Заступник 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 p-6 flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-                <div class="relative mb-5 w-48 h-60 overflow-hidden rounded-xl shadow-inner bg-slate-100">
-                    <img 
-                        src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(3).JPG?raw=true" 
-                        alt="Лобанова Юлія Юріївна" 
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                </div>
-                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                    Заступник директора з НВР
-                </span>
-                <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
-                    Лобанова Юлія Юріївна
-                </h3>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Учитель фізики та астрономії, спеціаліст вищої категорії, «Вчитель-методист»
-                </p>
-            </div>
-
-            <!-- Заступник 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 p-6 flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-                <div class="relative mb-5 w-48 h-60 overflow-hidden rounded-xl shadow-inner bg-slate-100">
-                    <img 
-                        src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(4).jpg?raw=true" 
-                        alt="Лейко Інна Вікторівна" 
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                </div>
-                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                    Заступник директора з НВР
-                </span>
-                <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
-                    Лейко Інна Вікторівна
-                </h3>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Учитель хімії, спеціаліст вищої категорії, «Вчитель-методист»
-                </p>
-            </div>
-
-            <!-- Заступник 4 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 p-6 flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-                <div class="relative mb-5 w-48 h-60 overflow-hidden rounded-xl shadow-inner bg-slate-100">
-                    <img 
-                        src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(5).jpg?raw=true" 
-                        alt="Мельник Наталія Павлівна" 
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                </div>
-                <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                    Заступник директора з АГЧ
-                </span>
-                <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
-                    Мельник Наталія Павлівна
-                </h3>
-                <p class="text-slate-500 text-sm sm:text-base leading-relaxed">
-                    Заступник директора з адміністративно-господарської частини
-                </p>
-            </div>
-
+            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-2">
+                Заступник директора з НВР
+            </span>
+            <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
+                Мефодьєва Світлана Олександрівна
+            </h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-auto">
+                Учитель української мови і літератури, спеціаліст вищої категорії, «Учитель-методист», «Відмінник освіти України»
+            </p>
         </div>
+
+        <!-- Заступник 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+            <div class="relative mb-4 overflow-hidden rounded-2xl shadow-md w-44 h-56 sm:w-48 sm:h-60">
+                <img 
+                    src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(3).JPG?raw=true" 
+                    alt="Лобанова Юлія Юріївна" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+            </div>
+            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-2">
+                Заступник директора з НВР
+            </span>
+            <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
+                Лобанова Юлія Юріївна
+            </h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-auto">
+                Учитель фізики та астрономії, спеціаліст вищої категорії, «Учитель-методист»
+            </p>
+        </div>
+
+        <!-- Заступник 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+            <div class="relative mb-4 overflow-hidden rounded-2xl shadow-md w-44 h-56 sm:w-48 sm:h-60">
+                <img 
+                    src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(4).jpg?raw=true" 
+                    alt="Лейко Інна Вікторівна" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+            </div>
+            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-2">
+                Заступник директора з НВР
+            </span>
+            <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
+                Лейко Інна Вікторівна
+            </h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-auto">
+                Учитель хімії, спеціаліст вищої категорії, «Учитель-методист»
+            </p>
+        </div>
+
+        <!-- Заступник 4 (АГЧ) -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+            <div class="relative mb-4 overflow-hidden rounded-2xl shadow-md w-44 h-56 sm:w-48 sm:h-60">
+                <img 
+                    src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/admin%20(5).jpg?raw=true" 
+                    alt="Мельник Наталія Павлівна" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+            </div>
+            <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-3 py-1 rounded-full mb-2">
+                Заступник директора з АГЧ
+            </span>
+            <h3 class="font-oswald text-xl sm:text-2xl font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
+                Мельник Наталія Павлівна
+            </h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-auto">
+                Заступник директора з адміністративно-господарської частини
+            </p>
+        </div>
+
     </div>
-</div>
+</section>
 
 <style>
-    /* Декоративна лінія заголовка за аналогією з 201 (1).html */
+    /* Декоративна лінія для заголовка відповідно до макету 201 (1).html */
     .page-title::after {
         content: "";
         position: absolute;
