@@ -5,7 +5,7 @@ import schoollogo from "../assets/logo.jpg";
 <div class="flex-grow max-w-5xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
     <article class="bg-white rounded-2xl shadow-xl border border-slate-200/80 overflow-hidden">
         
-        <!-- Заголовок у фірмовому градієнті/кольорі -->
+        <!-- Заголовок у фірмовому градієнті -->
         <div class="bg-gradient-to-r from-[#394e77] via-[#4b6496] to-[#2c3e50] p-6 sm:p-8 text-center relative overflow-hidden">
             <!-- Декоративна іконка на тлі -->
             <div class="absolute -right-4 -bottom-4 text-white/10 text-8xl pointer-events-none">
@@ -15,25 +15,18 @@ import schoollogo from "../assets/logo.jpg";
             <h1 class="font-oswald text-2xl sm:text-4xl font-bold text-white tracking-wide uppercase drop-shadow-md relative z-10">
                 Контактна інформація
             </h1>
-            <p class="text-slate-200 text-xs sm:text-sm mt-2 font-light relative z-10">
-                Гімназія №201 м. Києва — завжди на зв'язку
-            </p>
         </div>
 
         <div class="p-6 sm:p-8 space-y-8">
             
             <!-- Адреса -->
             <div class="bg-slate-50 rounded-xl p-5 border-l-4 border-[#4b6496] shadow-sm hover:shadow-md transition-shadow">
-                <div class="flex items-start gap-4">
-                    <div class="p-3 bg-[#4b6496]/10 rounded-lg flex-shrink-0">
-                        <img 
-                            alt="Адреса" 
-                            src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/kontakti1.jpg?raw=true" 
-                            class="w-6 h-6 object-contain" 
-                        />
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-[#4b6496]/10 text-[#4b6496] rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <div>
-                        <span class="text-xs uppercase font-bold tracking-wider text-slate-400 block mb-1">Офіційна адреса</span>
+                        <span class="text-xs uppercase font-bold tracking-wider text-slate-400 block mb-0.5">Офіційна адреса</span>
                         <h2 class="text-lg sm:text-xl font-bold text-slate-800 leading-snug">
                             Україна, Київ, 02130, Дніпровський район, проспект Воскресенський, 14А
                         </h2>
@@ -48,12 +41,8 @@ import schoollogo from "../assets/logo.jpg";
                 <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2.5 bg-amber-500/10 rounded-lg">
-                                <img 
-                                    alt="Телефон" 
-                                    src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/kontakti2.jpg?raw=true" 
-                                    class="w-5 h-5 object-contain" 
-                                />
+                            <div class="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-lg flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
                             </div>
                             <span class="font-oswald text-lg font-bold text-slate-800 uppercase tracking-wide">Телефонний зв'язок</span>
                         </div>
@@ -64,34 +53,21 @@ import schoollogo from "../assets/logo.jpg";
                     </div>
                 </div>
 
-                <!-- Електронні пошти -->
+                <!-- Електронні пошти з ідеально вирівняною сіткою -->
                 <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-blue-500/10 rounded-lg">
-                            <img 
-                                alt="E-mail" 
-                                src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/kontakti3.jpg?raw=true" 
-                                class="w-5 h-5 object-contain" 
-                            />
+                        <div class="w-10 h-10 bg-blue-500/10 text-[#4b6496] rounded-lg flex items-center justify-center text-lg flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
                         <span class="font-oswald text-lg font-bold text-slate-800 uppercase tracking-wide">Електронні адреси</span>
                     </div>
                     
-                    <div class="space-y-3 text-sm sm:text-base">
-                        <p class="text-slate-600 flex flex-wrap items-center gap-1.5">
-                            <span class="font-semibold text-slate-700">E-mail (приватний):</span> 
-                            <a href="mailto:szhs201@ukr.net" class="text-[#4b6496] hover:underline font-medium break-all">szhs201@ukr.net</a>
-                        </p>
-                        <p class="text-slate-600 flex flex-wrap items-center gap-1.5 pt-1 border-t border-slate-100">
-                            <!-- Збережено оригінальне зображення зі статусом opacity-0 для компенсації відступів -->
-                            <img 
-                                alt="http://school201.edukit.kiev.ua/Files/images/no-translate-detected_318-10967.jpg" 
-                                src="http://school201.edukit.kiev.ua/files2/images/no-translate-detected_318-10967.jpg?size=15&width=15&height=15" 
-                                class="w-4 h-4 opacity-0 hidden sm:inline-block" 
-                            />
-                            <span class="font-semibold text-slate-700">E-mail (офіційний):</span> 
-                            <a href="mailto:201school@kmda.gov.ua" class="text-[#4b6496] hover:underline font-medium break-all">201school@kmda.gov.ua</a>
-                        </p>
+                    <div class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 text-sm sm:text-base items-center">
+                        <span class="font-semibold text-slate-700">E-mail (приватний):</span> 
+                        <a href="mailto:szhs201@ukr.net" class="text-[#4b6496] hover:underline font-medium break-all">szhs201@ukr.net</a>
+                        
+                        <span class="font-semibold text-slate-700">E-mail (офіційний):</span> 
+                        <a href="mailto:201school@kmda.gov.ua" class="text-[#4b6496] hover:underline font-medium break-all">201school@kmda.gov.ua</a>
                     </div>
                 </div>
 
@@ -100,7 +76,7 @@ import schoollogo from "../assets/logo.jpg";
             <!-- Соціальні мережі -->
             <div class="pt-6 border-t border-slate-200">
                 <h3 class="font-oswald text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-[#4b6496] fa-share-nodes text-[#4b6496]"></i>
+                    <i class="fa-solid fa-share-nodes text-[#4b6496]"></i>
                     Соціальні мережі та месенджери:
                 </h3>
                 
@@ -113,7 +89,7 @@ import schoollogo from "../assets/logo.jpg";
                         title=" (у новому вікні)"
                         class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 hover:border-blue-400 bg-slate-50/50 hover:bg-blue-50/30 text-[#4b6496] hover:text-[#2c3e50] transition-all group"
                     >
-                        <div class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                        <div class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform flex-shrink-0">
                             <i class="fa-brands fa-facebook-f"></i>
                         </div>
                         <div class="overflow-hidden">
@@ -130,7 +106,7 @@ import schoollogo from "../assets/logo.jpg";
                         title=" (у новому вікні)"
                         class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 hover:border-sky-400 bg-slate-50/50 hover:bg-sky-50/30 text-[#4b6496] hover:text-[#2c3e50] transition-all group"
                     >
-                        <div class="w-10 h-10 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                        <div class="w-10 h-10 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform flex-shrink-0">
                             <i class="fa-brands fa-telegram"></i>
                         </div>
                         <div class="overflow-hidden">
@@ -146,7 +122,6 @@ import schoollogo from "../assets/logo.jpg";
 </div>
 
 <style>
-    /* Підключення шрифтів та запозичення стилів з нових шаблонів */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
 
     body {
