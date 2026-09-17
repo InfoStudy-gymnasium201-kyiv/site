@@ -2,36 +2,35 @@
 import schoollogo from "../assets/logo.jpg";
 ---
 
-<div class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
     <article class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
         
         <!-- Верхній баннер / Шапка статті -->
-        <div class="bg-gradient-to-br from-[#394e77] via-[#4b6496] to-[#2c3e50] p-6 sm:p-10 text-white relative overflow-hidden">
+        <div class="bg-gradient-to-br from-[#394e77] via-[#4b6496] to-[#2c3e50] p-6 sm:p-10 md:p-14 text-white relative overflow-hidden">
             <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl pointer-events-none font-oswald">
                 <i class="fa-solid fa-bolt"></i>
             </div>
             
-            <div class="relative z-10 max-w-3xl mx-auto text-center">
+            <div class="relative z-10 max-w-4xl mx-auto text-center">
                 <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 border border-amber-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 backdrop-blur-md">
                     <i class="fa-solid fa-trophy text-amber-400"></i> Перемога в проекті
                 </div>
                 
-                <h1 class="font-oswald text-2xl sm:text-3xl md:text-4xl font-bold leading-tight drop-shadow-md text-white">
+                <h1 class="font-oswald text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-md text-white">
                     Середня загальноосвітня школа № 201 – переможець проекту «Енергоефективні школи», створеного за сприяння компанії «D.ТЕК» Інститутом місцевого розвитку!
                 </h1>
             </div>
         </div>
 
         <!-- Основне тіло новини -->
-        <div class="p-6 sm:p-10 md:p-12 space-y-8 text-slate-700 leading-relaxed font-inter">
+        <div class="p-6 sm:p-10 md:p-14 max-w-5xl mx-auto space-y-8 text-slate-700 leading-relaxed font-inter">
             
-            <!-- Головне фото новини -->
-            <div class="relative group my-4">
-                <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-[#4b6496] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+            <!-- Головне фото новини (без світіння) -->
+            <div class="my-6 flex justify-center">
                 <img 
                     alt="Проект Енергоефективні школи" 
                     src="https://github.com/gymnasium201-kyiv/gymnasium201-kyiv.github.io/blob/main/public/informaciya_pro_zaklad/proekt_energoefektivni_shkoli.jpg?raw=true" 
-                    class="relative w-full h-auto max-w-2xl mx-auto rounded-xl shadow-lg border border-slate-200 object-cover"
+                    class="w-full h-auto max-w-3xl rounded-xl shadow-md border border-slate-200 object-cover"
                 />
             </div>
 
