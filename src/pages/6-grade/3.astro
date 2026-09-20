@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Sidebar from '../components/Sidebar.astro';
+---
+
+<Layout title="Апаратна та програмна складові інформаційної системи">
+  <Header />
+  <Hero />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <Sidebar />
+
+      <main class="lg:col-span-9 space-y-10">
+
+      </main>
+    </div>
+  </div>
+</Layout>
