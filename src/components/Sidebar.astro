@@ -1,0 +1,27 @@
+---
+const navItems = [
+  { href: "#prereq", num: "1.", text: "Пригадай та актуалізуй" },
+  { href: "#what-is-computer", num: "2.", text: "Що робить комп'ютер комп'ютером?" },
+  { href: "#hardware-classification", num: "3.", text: "Групи пристроїв ПК" },
+  { href: "#is-structure", num: "4.", text: "Складові інформаційної системи" },
+  { href: "#software-types", num: "5.", text: "Програмне забезпечення" },
+  { href: "#software-detail", num: "6.", text: "Системне, прикладне та інструментальне ПЗ" },
+  { href: "#user-interaction", num: "7.", text: "Рівні взаємодії" },
+  { href: "#os-management", num: "8.", text: "Перегляд пристроїв та програм в ОС" },
+  { href: "#summary", num: "9.", text: "Підсумки та самоперевірка" },
+];
+---
+
+<aside class="lg:col-span-3">
+  <div class="sticky top-24 bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+    <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Зміст параграфа</h2>
+    <nav class="space-y-1 text-sm custom-scrollbar max-h-[calc(100vh-160px)] overflow-y-auto pr-1">
+      {navItems.map(item => (
+        <a href={item.href} class="flex items-center text-slate-600 hover:text-brand-700 hover:bg-brand-50 px-3 py-2 rounded-lg font-medium transition">
+          <span class="w-6 text-brand-600 font-bold">{item.num}</span>
+          {item.text}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
