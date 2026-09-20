@@ -1,21 +1,30 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import PinnedNewsSchoolBlog from '../components/PinnedNewsSchoolBlog.astro';
-import NewSchoolBlog from '../components/NewSchoolBlog.astro';
-import SchoolBlogPages from '../components/SchoolBlogPages.astro';
-import Footer from '../components/Footer.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SidebarNav from '../components/SidebarNav.astro';
+import SectionPrereq from '../components/SectionPrereq.astro';
+import SectionWhatIsComputer from '../components/SectionWhatIsComputer.astro';
+import SectionHardwareClassification from '../components/SectionHardwareClassification.astro';
+import SectionIsStructure from '../components/SectionIsStructure.astro';
+import SectionSoftwareTypes from '../components/SectionSoftwareTypes.astro';
+import SectionSoftwareDetail from '../components/SectionSoftwareDetail.astro';
+import SectionUserInteraction from '../components/SectionUserInteraction.astro';
+import SectionOsManagement from '../components/SectionOsManagement.astro';
+import SectionSummary from '../components/SectionSummary.astro';
 ---
 
-<Layout>
-	<Header />
-	<Hero />
-	<PinnedNewsSchoolBlog />
-	<NewSchoolBlog />
-	<SchoolBlogPages />
-	<Footer />
+<Layout title="Апаратна та програмна складові інформаційної системи">
+  <Header />
+  <Hero />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <SidebarNav />
+
+      <main class="lg:col-span-9 space-y-10">
+
+      </main>
+    </div>
+  </div>
 </Layout>
